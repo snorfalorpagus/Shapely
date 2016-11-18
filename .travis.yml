@@ -32,6 +32,7 @@ script: "py.test --cov shapely --cov-report term-missing ${TRAVIS_SPEEDUP_OPTS}"
 
 after_success:
   - coveralls || echo "!! intermittent coveralls failure"
+  - bash -x travis-docs.sh
   
 notifications:
     email: false
